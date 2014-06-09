@@ -7,6 +7,7 @@
 
 <!-- Optional theme -->
 
+<link rel="icon" href="favicon.ico">
 <script src="js/jquery-2.1.1.min.js"></script>
 
 <!-- Latest compiled and minified JavaScript -->
@@ -22,19 +23,11 @@
 
 <script>
 
-$('.navbar-collapse').on('show.bs.collapse', function () {
-  console.log("herefdf");
-    $("html, body").animate({ scrollTop: $(document).height() }, "slow");
-  });
-
-
-
-
 $(document).ready(function() {
     
-    var color = ["#1f77b4", "#ff7f0e", "#2ca02c", "#d62728", "#9467bd", "#8c564b", "#e377c2", "#7f7f7f", "#bcbd22", "#17becf",]
+    var color = ["#1f77b4", "#ff7f0e", "#2ca02c", "#d62728", "#7e3878", "#990000", "#EEAD0E", "#00aba9RGB", "#6B8E23", "#17becf",]
     
-    
+   
     var n = Math.floor((Math.random() * 10) );
      $(".mainheader").css("text-shadow", function(){
       return "1px 1px 1px " + color[n]
@@ -42,9 +35,21 @@ $(document).ready(function() {
     setTimeout(function() {   
       $(".navbar").css("background-color", function(){ return color[n]})
       $(".navbar").fadeIn("1500")
-     
-      }, 1000);
+    }, 1000);
       
+    //smooth scrolling
+    $('a[href^="#"]').on('click',function (e) {
+      e.preventDefault();
+
+      var target = this.hash,
+      $target = $(target);
+
+      $('html, body').stop().animate({
+          'scrollTop': $target.offset().top
+      }, 1200, 'swing', function () {
+          window.location.hash = target;
+      });
+  });
   
 });
   </script>	
@@ -129,7 +134,7 @@ font-size: 4em;
   <div class="navbar-collapse collapse navbar-inverse-collapse">
     <ul class="nav navbar-nav">
      
-      <li><a href="#">Link</a></li>
+      <li><a href="#bio">Who?</a></li>
       <li class="dropup">
         <a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown <b class="caret"></b></a>
         <ul class="dropdown-menu">
@@ -143,9 +148,7 @@ font-size: 4em;
         </ul>
       </li>
     </ul>
-    <form class="navbar-form navbar-right">
-      <input type="text" class="form-control col-lg-8" placeholder="Search">
-    </form>
+    
     <ul class="nav navbar-nav navbar-right">
       <li><a href="#">Link</a></li>
       <li class="dropdown">
@@ -162,15 +165,34 @@ font-size: 4em;
   </div>
 </div>
 
-<div class="container containertext">
+<div id = "bio"class="container containertext">
      
       <p class="lead">Hi, I'm Luciano. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce elementum hendrerit rhoncus. Nam orci lectus, tincidunt eget massa at, molestie interdum dolor. Curabitur molestie tellus nulla, id tempor sapien euismod quis. Maecenas vel lobortis lectus. Nam convallis diam a auctor pretium. Nam tempus sed metus in vehicula. In velit nisi, ultrices id orci quis, faucibus bibendum orci.</p>
       <p>*Use <a href="../sticky-footer-navbar">the sticky footer with a fixed navbar</a> if need be, too.</p>
-     
+</div>
+<hr>
+<div class="container containertext">
+  <!-- Example row of columns -->
+  <div class="row">
+    <div class="col-md-4">
+      <h2>G</h2>
+       <a href="./Vis-GreatRecession" class="thumbnail">
+      <img src="./img/great-recessionviz.png" alt="Great Recession Visualization">
+    </a>
+      <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
     </div>
+    <div class="col-md-4">
+      <h2>Heading</h2>
+      <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
+      <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
+   </div>
+    <div class="col-md-4">
+      <h2>Heading</h2>
+      <p>Donec sed odio dui. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Vestibulum id ligula porta felis euismod semper. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh.</p>
+      <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
+    </div>
+  </div>
 
-    
-    </div>
 
 
 
