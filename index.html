@@ -33,9 +33,10 @@ $(document).ready(function() {
       return "1px 1px 1px " + color[n]
      } )
     $(".navbar").css("background-color", function(){ return color[n]})
-     $("head").append(function(){
-      return '<style>figure:before{background:'+  color[n]+ ';}</style>'
-    });
+
+    
+    $("head").append(function(){return '<style>figure:before{background:'+  color[n]+ ';}hr{border-top: 2px solid'+ color[n] +';}</style>'});
+
 
     setTimeout(function() {   
             $(".navbar").fadeIn("1500")
@@ -225,7 +226,7 @@ figure:hover:before {
       <p class="lead">Hi, I'm Luciano. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce elementum hendrerit rhoncus. Nam orci lectus, tincidunt eget massa at, molestie interdum dolor. Curabitur molestie tellus nulla, id tempor sapien euismod quis. Maecenas vel lobortis lectus. Nam convallis diam a auctor pretium. Nam tempus sed metus in vehicula. In velit nisi, ultrices id orci quis, faucibus bibendum orci.</p>
       <p>*Use <a href="../sticky-footer-navbar">the sticky footer with a fixed navbar</a> if need be, too.</p>
 </div>
-<hr>
+<hr class = "container">
 <div class="container containertext">
   <!-- Example row of columns -->
   <div class="row">
