@@ -27,15 +27,18 @@ $(document).ready(function() {
     
     var color = ["#1f77b4", "#ff7f0e", "#2ca02c", "#d62728", "#7e3878", "#990000", "#EEAD0E", "#00aba9RGB", "#6B8E23", "#17becf",]
     
-   
+    $("#compsci-link").on("click", function(e){
+      e.preventDefault();
+      $("#compsci").removeClass("hide")
+    }) 
     var n = Math.floor((Math.random() * 10) );
      $(".mainheader").css("text-shadow", function(){
       return "1px 1px 1px " + color[n]
      } )
     $(".navbar").css("background-color", function(){ return color[n]})
 
-    
-    $("head").append(function(){return '<style>figure:before{background:'+  color[n]+ ';}hr{border-top: 2px solid'+ color[n] +';}</style>'});
+     
+    $("head").append(function(){return '<style>figure:before{background:'+  color[n]+ ';}hr{border-top: 2px solid'+ color[n] +';}a{color:'+ color[n] +';}</style>'});
 
 
     setTimeout(function() {   
@@ -110,6 +113,13 @@ font-size: 4em;
   padding-top: 25%;
   color: #000;
 }
+.containerprojects {
+  width: auto;
+  max-width: 680px;
+  height: 100%;
+  padding-top: 15%;
+  color: #000;
+}
 
 figure { 
   display: block; 
@@ -162,7 +172,9 @@ figure:before {
 figure:hover:before {
   opacity: 0;
 }
-
+.projectheadline{
+  text-align: center;
+}
 </style>
 </head>
 <body >
@@ -191,6 +203,7 @@ figure:hover:before {
     <ul class="nav navbar-nav">
      
       <li><a href="#bio">Who?</a></li>
+      <li><a href="#projects">Projects</a></li>
       <li class="dropup">
         <a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown <b class="caret"></b></a>
         <ul class="dropdown-menu">
@@ -223,18 +236,23 @@ figure:hover:before {
 
 <div id = "bio"class="container containertext">
      
-      <p class="lead">Hi, I'm Luciano. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce elementum hendrerit rhoncus. Nam orci lectus, tincidunt eget massa at, molestie interdum dolor. Curabitur molestie tellus nulla, id tempor sapien euismod quis. Maecenas vel lobortis lectus. Nam convallis diam a auctor pretium. Nam tempus sed metus in vehicula. In velit nisi, ultrices id orci quis, faucibus bibendum orci.</p>
+      <p class="lead">Hi, I'm Luciano. I'm an <a id= "compsci-link" href="#">undergraduate</a> <text id = "compsci" class = "hide"> studying computer science and economics</text> at Harvard University. Fusce elementum hendrerit rhoncus. Nam orci lectus, tincidunt eget massa at, molestie interdum dolor. Curabitur molestie tellus nulla, id tempor sapien euismod quis. Maecenas vel lobortis lectus. Nam convallis diam a auctor pretium. Nam tempus sed metus in vehicula. In velit nisi, ultrices id orci quis, faucibus bibendum orci.</p>
       <p>*Use <a href="../sticky-footer-navbar">the sticky footer with a fixed navbar</a> if need be, too.</p>
 </div>
 <hr class = "container">
-<div class="container containertext">
+<div class="container containerprojects" id = "projects">
   <!-- Example row of columns -->
+  <div class="row">
+     <div class="col-md-12">
+      <h1 class = "projectheadline"> Show me the Money </h1>
+     </div>
+  </div>
   <div class="row">
     <div class="col-md-4">
     
       <a href="./Vis-GreatRecession" class="thumbnail">
        <figure class = "cap-bot">
-        <img src="./img/great-recessionviz.png" alt="Great Recession Visualization" class ="img-responsive" width = "300">
+        <img src="./img/great-recessionviz.png" alt="Great Recession Visualization" class ="img-responsive" >
         <figcaption>
             Hoy te dedico mis mejors pregones
         </figcaption>
