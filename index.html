@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html style = "height: 100%;">
+<html style = "height: 100%;" lang="en">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 <head>
 <!-- Latest compiled and minified CSS -->
@@ -27,10 +27,8 @@ $(document).ready(function() {
     
     var color = ["#1f77b4", "#ff7f0e", "#2ca02c", "#d62728", "#7e3878", "#990000", "#EEAD0E", "#00aba9RGB", "#6B8E23", "#17becf",]
     
-    $("#compsci-link").on("click", function(e){
-      e.preventDefault();
-      $("#compsci").removeClass("hide")
-    }) 
+    $("#compsci-link").on("click", function(e){linkhandle(e);})
+
     var n = Math.floor((Math.random() * 10) );
      $(".mainheader").css("text-shadow", function(){
       return "1px 1px 1px " + color[n]
@@ -58,8 +56,27 @@ $(document).ready(function() {
           window.location.hash = target;
       });
   });
+
+ 
+if (!is_touch_device()) {
+ $('figcaption').addClass('hovered');
+}
   
 });
+
+
+function linkhandle (e){
+  e.preventDefault();
+  var id = e.currentTarget.id.replace("-link", '');
+  e.currentTarget.remove()
+  $("#"+id).removeClass("hide")
+}
+
+function is_touch_device() {
+ return (('ontouchstart' in window)
+      || (navigator.MaxTouchPoints > 0)
+      || (navigator.msMaxTouchPoints > 0));
+}
   </script>	
 
 <style>
@@ -141,14 +158,14 @@ figcaption {
   -o-transition:      all 0.6s ease;
 }
 
-figure:hover figcaption {
+figure:hover figcaption, figcaption.hovered {
   opacity: 1;
   left: 0;
+  bottom: 0;
 }
 
 .cap-bot:before { bottom: 10px; left: 10px; }
 .cap-bot figcaption { left: 0; bottom: -30%;}
-.cap-bot:hover figcaption { bottom: 0; }
 
 figure:before { 
   content: "?"; 
@@ -174,6 +191,19 @@ figure:hover:before {
 }
 .projectheadline{
   text-align: center;
+}
+.projimage{
+display: block;
+padding: 4px;
+line-height: 1.42857143;
+background-color: #2b3e50;
+border: 1px solid #dddddd;
+border-radius: 0;
+-webkit-transition: all 0.2s ease-in-out;
+transition: all 0.2s ease-in-out;
+}
+.projfig{
+margin-bottom: 21px;
 }
 </style>
 </head>
@@ -236,7 +266,8 @@ figure:hover:before {
 
 <div id = "bio"class="container containertext">
      
-      <p class="lead">Hi, I'm Luciano. I'm an <a id= "compsci-link" href="#">undergraduate</a> <text id = "compsci" class = "hide"> studying computer science and economics</text> at Harvard University. Fusce elementum hendrerit rhoncus. Nam orci lectus, tincidunt eget massa at, molestie interdum dolor. Curabitur molestie tellus nulla, id tempor sapien euismod quis. Maecenas vel lobortis lectus. Nam convallis diam a auctor pretium. Nam tempus sed metus in vehicula. In velit nisi, ultrices id orci quis, faucibus bibendum orci.</p>
+      <p class="lead">Hi, I'm Luciano Arango. <br>
+      I'm an <a id= "compsci-link" href="#">undergraduate</a> <text id = "compsci" class = "hide">undergraduate studying computer science and economics</text> at Harvard University. I like to code, I like coke, and I like cones. Curabitur molestie tellus nulla, id tempor sapien euismod quis. Maecenas vel lobortis lectus. Nam convallis diam a auctor pretium. Nam tempus sed metus in vehicula. In velit nisi, ultrices id orci quis, faucibus bibendum orci.</p>
       <p>*Use <a href="../sticky-footer-navbar">the sticky footer with a fixed navbar</a> if need be, too.</p>
 </div>
 <hr class = "container">
@@ -247,39 +278,40 @@ figure:hover:before {
       <h1 class = "projectheadline"> Show me the Money </h1>
      </div>
   </div>
+  <br>
   <div class="row">
     <div class="col-md-4">
-    
-      <a href="./Vis-GreatRecession" class="thumbnail">
-       <figure class = "cap-bot">
-        <img src="./img/great-recessionviz.png" alt="Great Recession Visualization" class ="img-responsive" >
+    <a href="./Vis-GreatRecession" >
+    <figure class = "cap-bot projfig">
+        <img src="./img/great-recessionviz.png" alt="Great Recession Visualization" class ="img-responsive projimage" >
         <figcaption>
-            Hoy te dedico mis mejors pregones
+            Hoy te dedico mis mejores pregones
         </figcaption>
+      
       </figure>
-    </a>   
+    </a>
     </div>
-    <div class="col-md-4">
-    
-       <a href="./Vis-GreatRecession" class="thumbnail">
-        <figure class = "cap-bot">
-        <img src="./img/great-recessionviz.png" alt="Great Recession Visualization" class ="img-responsive">
+     <div class="col-md-4">
+    <a href="./Vis-GreatRecession" >
+    <figure class = "cap-bot projfig">
+        <img src="./img/great-recessionviz.png" alt="Great Recession Visualization" class ="img-responsive projimage" >
         <figcaption>
-            Hoy te dedico mis mejors pregones
+            Hoy te dedico mis mejores pregones
         </figcaption>
+      
       </figure>
-    </a>   
+    </a>
     </div>
-    <div class="col-md-4">
-    
-       <a href="./Vis-GreatRecession" class="thumbnail">
-        <figure class = "cap-bot">
-        <img src="./img/great-recessionviz.png" alt="Great Recession Visualization" class ="img-responsive">
+     <div class="col-md-4">
+    <a href="./Vis-GreatRecession" >
+    <figure class = "cap-bot projfig">
+        <img src="./img/great-recessionviz.png" alt="Great Recession Visualization" class ="img-responsive projimage" >
         <figcaption>
-            Hoy te dedico mis mejors pregones
+            Hoy te dedico mis mejores pregones
         </figcaption>
+      
       </figure>
-    </a>   
+    </a>
     </div>
   </div>
 
