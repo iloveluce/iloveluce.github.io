@@ -22,10 +22,12 @@
 <title>Luciano Arango</title>
 
 <script>
-
+var controller;
 $(document).ready(function() {
     
-    var color = ["#1f77b4", "#ff7f0e", "#2ca02c", "#d62728", "#7e3878", "#990000", "#EEAD0E", "#00aba9RGB", "#6B8E23", "#17becf",]
+  controller = new ScrollMagic();
+
+  var color = ["#1f77b4", "#ff7f0e", "#2ca02c", "#d62728", "#7e3878", "#990000", "#EEAD0E", "#00aba9RGB", "#6B8E23", "#17becf",]
     
     $("#compsci-link").on("click", function(e){linkhandle(e);})
 
@@ -62,6 +64,10 @@ $(document).ready(function() {
 if (is_touch_device()) {
  $('figcaption').addClass('hovered');
 }
+
+  var scene = new ScrollScene({triggerElement: "#navy", triggerHook: 0.02})
+        .setPin("#navy")
+        .addTo(controller);
   
 });
 
@@ -105,7 +111,9 @@ width: 80%;
 }
 .navbar{
 
-  display: none;
+  
+  position: relative;
+  top: 90%;
 }
 
 .intro{
@@ -198,13 +206,12 @@ display: block;
 padding: 4px;
 line-height: 1.42857143;
 background-color: #2b3e50;
-border: 1px solid #dddddd;
 border-radius: 0;
 -webkit-transition: all 0.2s ease-in-out;
 transition: all 0.2s ease-in-out;
 }
 .projfig{
-margin-bottom: 21px;
+margin-bottom: 20px;
 }
 </style>
 </head>
@@ -219,9 +226,8 @@ margin-bottom: 21px;
   </h2>
 
   </div>
-</div>
- 
-<div class="navbar navbar-inverse navbar-fixed-top container-fluid navbarcontainer">
+
+<div class="navbar navbar-inverse navbar-fixed-top container-fluid navbarcontainer" id = "navy">
   <div class="navbar-header">
     <button id= "collapsebutton" type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-inverse-collapse">
       <span class="icon-bar"></span>
@@ -264,7 +270,8 @@ margin-bottom: 21px;
     </ul>
   </div>
 </div>
-
+</div>
+ 
 <div id = "bio"class="container containertext">
      
       <p class="lead">Hi, I'm Luciano Arango. <br>
@@ -284,7 +291,7 @@ margin-bottom: 21px;
     <div class="col-md-4">
     <a href="./Vis-GreatRecession" >
     <figure class = "cap-bot projfig">
-        <img src="./img/great-recessionviz.png" alt="Great Recession Visualization" class ="img-responsive projimage" >
+        <img src="./img/great-recessionviz.png" alt="Great Recession Visualization" class ="img-responsive projimage " >
         <figcaption>
             Hoy te dedico mis mejores pregones
         </figcaption>
