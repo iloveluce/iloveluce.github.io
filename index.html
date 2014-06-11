@@ -40,10 +40,10 @@ $(document).ready(function() {
      
     $("head").append(function(){return '<style>figure:before{background:'+  color[n]+ ';}hr{border-top: 2px solid'+ color[n] +';}a{color:'+ color[n] +';}</style>'});
 
-
+$(".navbar").css("opacity","0");
+    
     setTimeout(function() {   
-            $(".navbar").fadeIn("1500")
-    }, 1000);
+    $(".navbar").fadeTo(1000,1)}, 500);
       
 
     //smooth scrolling
@@ -65,7 +65,7 @@ if (is_touch_device()) {
  $('figcaption').addClass('hovered');
 }
 
-  var scene = new ScrollScene({triggerElement: "#navy", triggerHook: 0.02})
+  var scene = new ScrollScene({triggerElement: "#navy", triggerHook: 0})
         .setPin("#navy")
         .addTo(controller);
   
