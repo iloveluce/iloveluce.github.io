@@ -36,7 +36,7 @@ $(document).ready(function() {
       return "1px 1px 1px " + color[n]
      } )
     $(".navbar").css("background-color", function(){ return color[n]})
-
+    $(".dropdown-menu").css("background-color", function(){ return color[n]})
      
     $("head").append(function(){return '<style>figure:before{background:'+  color[n]+ ';}hr{border-top: 2px solid'+ color[n] +';}a{color:'+ color[n] +';}</style>'});
 
@@ -58,7 +58,7 @@ $(".navbar").css("opacity","0");
       }, 1200, 'swing', function () {
           window.location.hash = target;
       });
-  });
+    });
 
  
 if (is_touch_device()) {
@@ -69,6 +69,10 @@ if (is_touch_device()) {
         .setPin("#navy")
         .addTo(controller);
   
+// add listeners
+scene.on("enter", function(){
+ $("#projectdrop").toggleClass("dropup")
+});  
 });
 
 
@@ -240,11 +244,10 @@ margin-bottom: 20px;
     <ul class="nav navbar-nav">
      
       <li><a href="#bio">Who?</a></li>
-      <li><a href="#projects">Projects</a></li>
-      <li class="dropup">
-        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown <b class="caret"></b></a>
+      <li class="dropup" id="projectdrop">
+        <a href="#" class="dropdown-toggle " data-toggle="dropdown">Projects <b class="caret"></b></a>
         <ul class="dropdown-menu">
-          <li><a href="#">Action</a></li>
+          <li><a href="#">Recession Visualization</a></li>
           <li><a href="#">Another action</a></li>
           <li><a href="#">Something else here</a></li>
           <li class="divider"></li>
@@ -256,17 +259,8 @@ margin-bottom: 20px;
     </ul>
     
     <ul class="nav navbar-nav navbar-right">
-      <li><a href="#">Link</a></li>
-      <li class="dropdown">
-        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown <b class="caret"></b></a>
-        <ul class="dropdown-menu">
-          <li><a href="#">Action</a></li>
-          <li><a href="#">Another action</a></li>
-          <li><a href="#">Something else here</a></li>
-          <li class="divider"></li>
-          <li><a href="#">Separated link</a></li>
-        </ul>
-      </li>
+      <li><a href="#">Contact</a></li>
+      
     </ul>
   </div>
 </div>
@@ -293,7 +287,7 @@ margin-bottom: 20px;
     <figure class = "cap-bot projfig">
         <img src="./img/great-recessionviz.png" alt="Great Recession Visualization" class ="img-responsive projimage " >
         <figcaption>
-            Hoy te dedico mis mejores pregones
+           A D3 Visualization exploring how the Great Recession of 2008 affected the United States
         </figcaption>
       
       </figure>
