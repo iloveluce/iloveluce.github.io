@@ -1,0 +1,127 @@
+
+body{
+  height: 100%;
+  background: #fcfcfa;
+
+}
+.maincontainer{
+  height: 100%;
+  background-image: url(../img/baby_pic.jpg);
+  background-position:center;
+  background-repeat:no-repeat;
+  background-size: cover;
+  display: block;
+
+
+
+}
+.navbarcontainer{
+
+width: 80%;
+
+
+}
+.navbar{
+
+
+  position: relative;
+  top: 90%;
+}
+
+.intro{
+  width: 95%;
+  position: absolute;
+  bottom: 20%;
+  background-color: rgba(0,0,0, 0.3);
+
+}
+.mainheader{
+text-align: center;
+font-size: 4em;
+}
+.secondheader{
+  text-align: center;
+  text-shadow:1px 1px 1px #000000;
+}
+
+.containertext {
+  width: auto;
+  max-width: 680px;
+  height: 100%;
+  padding-top: 25%;
+  color: #000;
+}
+.containerprojects {
+  width: auto;
+  max-width: 680px;
+  height: 100%;
+  padding-top: 15%;
+  color: #000;
+}
+
+figure {
+  display: block;
+  position: relative;
+  overflow: hidden;
+}
+
+figcaption {
+  position: absolute;
+  background: rgba(0,0,0,0.75);
+  color: white;
+  padding: 10px 20px;
+
+  opacity: 0;
+  bottom: 0;
+  left: -30%;
+  -webkit-transition: all 0.6s ease;
+  -moz-transition:    all 0.6s ease;
+  -o-transition:      all 0.6s ease;
+}
+.cap-bot figcaption { left: 0; bottom: -30%;}
+
+figure:hover figcaption, figcaption.hovered {
+  opacity: 1;
+  left: 0;
+  bottom: 0;
+}
+
+.cap-bot:before { bottom: 10px; left: 10px; }
+
+figure:before {
+  content: "?";
+  position: absolute;
+  background: rgba(0,0,0,0.75);
+  color: white;
+  width: 24px;
+  height: 24px;
+  -webkit-border-radius: 12px;
+  -moz-border-radius:    12px;
+  border-radius:         12px;
+  text-align: center;
+  font-size: 14px;
+  line-height: 24px;
+  /* Only Fx 4 supporting transitions on psuedo elements so far... */
+  -webkit-transition: all 0.6s ease;
+  -moz-transition: all 0.6s ease;
+  -o-transition: all 0.6s ease;
+  opacity: 0.75;
+}
+figure:hover:before {
+  opacity: 0;
+}
+.projectheadline{
+  text-align: center;
+}
+.projimage{
+display: block;
+padding: 4px;
+line-height: 1.42857143;
+background-color: #2b3e50;
+border-radius: 0;
+-webkit-transition: all 0.2s ease-in-out;
+transition: all 0.2s ease-in-out;
+}
+.projfig{
+margin-bottom: 20px;
+}

@@ -13,211 +13,16 @@
 <!-- Latest compiled and minified JavaScript -->
 <script src="js/bootstrap.min.js"></script>
 <script type="text/javascript" src="js/dependent/greensock/TweenMax.min.js"></script>
-	<script type="text/javascript" src="js/dependent/greensock/plugins/ScrollToPlugin.min.js"></script>
-	<script type="text/javascript" src="js/dependent/jquery-1.11.0.min.js"></script>
-  	
-  	<script type="text/javascript" src="js/mobile/iscroll.js"></script>
-  	<script type="text/javascript" src="js/jquery.scrollmagic.min.js"></script>
-    <script src="http://d3js.org/d3.v3.min.js" charset="utf-8"></script>
+<script type="text/javascript" src="js/dependent/greensock/plugins/ScrollToPlugin.min.js"></script>
+<script type="text/javascript" src="js/dependent/jquery-1.11.0.min.js"></script>
+
+<script type="text/javascript" src="js/mobile/iscroll.js"></script>
+<script type="text/javascript" src="js/jquery.scrollmagic.min.js"></script>
+<script src="http://d3js.org/d3.v3.min.js" charset="utf-8"></script>
+<script type="text/javascript" src="js/main.js"></script>
+
+
 <title>Luciano Arango</title>
-
-<script>
-var controller;
-$(document).ready(function() {
-    
-  controller = new ScrollMagic();
-
-  var color = ["#1f77b4", "#ff7f0e", "#2ca02c", "#d62728", "#7e3878", "#990000", "#EEAD0E", "#00aba9RGB", "#6B8E23", "#17becf",]
-    
-    $("#compsci-link").on("click", function(e){linkhandle(e);})
-
-    var n = Math.floor((Math.random() * 10) );
-     $(".mainheader").css("text-shadow", function(){
-      return "1px 1px 1px " + color[n]
-     } )
-    $(".navbar").css("background-color", function(){ return color[n]})
-    $(".dropdown-menu").css("background-color", function(){ return color[n]})
-     
-    $("head").append(function(){return '<style>figure:before{background:'+  color[n]+ ';}hr{border-top: 2px solid'+ color[n] +';}a{color:'+ color[n] +';}</style>'});
-
-$(".navbar").css("opacity","0");
-    
-    setTimeout(function() {   
-    $(".navbar").fadeTo(1000,1)}, 500);
-      
-
-    //smooth scrolling
-    $('a[href^="#"]').on('click',function (e) {
-      e.preventDefault();
-
-      var target = this.hash,
-      $target = $(target);
-
-      $('html, body').stop().animate({
-          'scrollTop': $target.offset().top
-      }, 1200, 'swing', function () {
-          window.location.hash = target;
-      });
-    });
-
- 
-if (is_touch_device()) {
- $('figcaption').addClass('hovered');
-}
-
-  var scene = new ScrollScene({triggerElement: "#navy", triggerHook: 0})
-        .setPin("#navy")
-        .addTo(controller);
-  
-// add listeners
-scene.on("enter", function(){
- $("#projectdrop").toggleClass("dropup")
-});  
-});
-
-
-function linkhandle (e){
-  e.preventDefault();
-  var id = e.currentTarget.id.replace("-link", '');
-  e.currentTarget.remove()
-  $("#"+id).removeClass("hide")
-}
-
-function is_touch_device() {
- return (('ontouchstart' in window)
-      || (navigator.MaxTouchPoints > 0)
-      || (navigator.msMaxTouchPoints > 0));
-}
-  </script>	
-
-<style>
-body{
-  height: 100%;
-  background: #fcfcfa;
-
-}
-.maincontainer{
-  height: 100%;
-  background-image: url(../img/baby_pic.jpg);
-  background-position:center;
-  background-repeat:no-repeat;
-  background-size: cover;
-  display: block;
-  
-
- 
-}
-.navbarcontainer{
-
-width: 80%;
-
- 
-}
-.navbar{
-
-  
-  position: relative;
-  top: 90%;
-}
-
-.intro{
-  width: 95%;
-  position: absolute;
-  bottom: 20%;
-  background-color: rgba(0,0,0, 0.3);
-
-}
-.mainheader{
-text-align: center;
-font-size: 4em;
-}
-.secondheader{
-  text-align: center;
-  text-shadow:1px 1px 1px #000000;
-}
-
-.containertext {
-  width: auto;
-  max-width: 680px;
-  height: 100%;
-  padding-top: 25%;
-  color: #000;
-}
-.containerprojects {
-  width: auto;
-  max-width: 680px;
-  height: 100%;
-  padding-top: 15%;
-  color: #000;
-}
-
-figure { 
-  display: block; 
-  position: relative; 
-  overflow: hidden; 
-}
-
-figcaption { 
-  position: absolute; 
-  background: rgba(0,0,0,0.75); 
-  color: white; 
-  padding: 10px 20px; 
-
-  opacity: 0;
-  bottom: 0; 
-  left: -30%;
-  -webkit-transition: all 0.6s ease;
-  -moz-transition:    all 0.6s ease;
-  -o-transition:      all 0.6s ease;
-}
-.cap-bot figcaption { left: 0; bottom: -30%;}
-
-figure:hover figcaption, figcaption.hovered {
-  opacity: 1;
-  left: 0;
-  bottom: 0;
-}
-
-.cap-bot:before { bottom: 10px; left: 10px; }
-
-figure:before { 
-  content: "?"; 
-  position: absolute; 
-  background: rgba(0,0,0,0.75); 
-  color: white;
-  width: 24px;
-  height: 24px;
-  -webkit-border-radius: 12px;
-  -moz-border-radius:    12px;
-  border-radius:         12px;
-  text-align: center;
-  font-size: 14px;
-  line-height: 24px;
-  /* Only Fx 4 supporting transitions on psuedo elements so far... */
-  -webkit-transition: all 0.6s ease;
-  -moz-transition: all 0.6s ease;
-  -o-transition: all 0.6s ease;
-  opacity: 0.75;  
-}
-figure:hover:before {
-  opacity: 0;
-}
-.projectheadline{
-  text-align: center;
-}
-.projimage{
-display: block;
-padding: 4px;
-line-height: 1.42857143;
-background-color: #2b3e50;
-border-radius: 0;
--webkit-transition: all 0.2s ease-in-out;
-transition: all 0.2s ease-in-out;
-}
-.projfig{
-margin-bottom: 20px;
-}
-</style>
 </head>
 <body >
 <div class="container-fluid maincontainer">
@@ -242,7 +47,7 @@ margin-bottom: 20px;
   </div>
   <div class="navbar-collapse collapse navbar-inverse-collapse">
     <ul class="nav navbar-nav">
-     
+
       <li><a href="#bio">Who?</a></li>
       <li class="dropup" id="projectdrop">
         <a href="#" class="dropdown-toggle " data-toggle="dropdown">Projects <b class="caret"></b></a>
@@ -257,17 +62,17 @@ margin-bottom: 20px;
         </ul>
       </li>
     </ul>
-    
+
     <ul class="nav navbar-nav navbar-right">
       <li><a href="#">Contact</a></li>
-      
+
     </ul>
   </div>
 </div>
 </div>
- 
+
 <div id = "bio"class="container containertext">
-     
+
       <p class="lead">Hi, I'm Luciano Arango. <br>
       I'm an <a id= "compsci-link" href="#">undergraduate</a> <text id = "compsci" class = "hide">undergraduate studying computer science and economics</text> at Harvard University. I like to code, I like coke, and I like cones. Curabitur molestie tellus nulla, id tempor sapien euismod quis. Maecenas vel lobortis lectus. Nam convallis diam a auctor pretium. Nam tempus sed metus in vehicula. In velit nisi, ultrices id orci quis, faucibus bibendum orci.</p>
       <p>*Use <a href="../sticky-footer-navbar">the sticky footer with a fixed navbar</a> if need be, too.</p>
@@ -289,7 +94,7 @@ margin-bottom: 20px;
         <figcaption>
            A D3 Visualization exploring how the Great Recession of 2008 affected the United States
         </figcaption>
-      
+
       </figure>
     </a>
     </div>
@@ -300,7 +105,7 @@ margin-bottom: 20px;
         <figcaption>
             Hoy te dedico mis mejores pregones
         </figcaption>
-      
+
       </figure>
     </a>
     </div>
@@ -311,7 +116,7 @@ margin-bottom: 20px;
         <figcaption>
             Hoy te dedico mis mejores pregones
         </figcaption>
-      
+
       </figure>
     </a>
     </div>
