@@ -6,6 +6,8 @@ $(document).ready(function() {
   var color = ["#1f77b4", "#ff7f0e", "#2ca02c", "#d62728", "#7e3878", "#990000", "#EEAD0E", "#00aba9RGB", "#6B8E23", "#17becf",]
 
     $("#compsci-link").on("click", function(e){linkhandle(e);})
+    $("#code-link").on("click", function(e){linkhandle(e);})
+    $("#ilike-link").on("click", function(e){linkhandle(e);})
 
     var n = Math.floor((Math.random() * 10) );
      $(".mainheader").css("text-shadow", function(){
