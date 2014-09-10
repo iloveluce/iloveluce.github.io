@@ -7,7 +7,11 @@ $(document).ready(function() {
 
     $("#compsci-link").on("click", function(e){linkhandle(e);})
     $("#code-link").on("click", function(e){linkhandle(e);})
+    $("#code-description-link").on("click", function(e){linkhandle(e);})
     $("#ilike-link").on("click", function(e){linkhandle(e);})
+
+    $(".maincontainer").css("height", $(window).height())
+     $(".containertext").css("height", $(window).height())
 
     var n = Math.floor((Math.random() * 10) );
      $(".mainheader").css("text-shadow", function(){
@@ -18,7 +22,7 @@ $(document).ready(function() {
 
     $("head").append(function(){return '<style>figure:before{background:'+  color[n]+ ';}hr{border-top: 2px solid'+ color[n] +';}a{color:'+ color[n] +';}</style>'});
 
-$(".navbar").css("opacity","0");
+	$(".navbar").css("opacity","0");
 
     setTimeout(function() {
     $(".navbar").fadeTo(1000,1)}, 500);
