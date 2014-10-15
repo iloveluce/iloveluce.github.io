@@ -10,8 +10,9 @@ $(document).ready(function() {
     $("#code-description-link").on("click", function(e){linkhandle(e);})
     $("#ilike-link").on("click", function(e){linkhandle(e);})
 
+
     $(".maincontainer").css("height", $(window).height())
-     $(".containertext").css("height", $(window).height())
+    $(".fullscreen").css("min-height", $(window).height())
 
     var n = Math.floor((Math.random() * 10) );
      $(".mainheader").css("text-shadow", function(){

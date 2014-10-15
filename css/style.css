@@ -4,6 +4,10 @@ body{
   background: #fcfcfa;
 
 }
+p {
+	color: #000;
+}
+
 .maincontainer{
   /* height: 100%; */
   background-image: url(../img/baby_pic.jpg);
@@ -33,7 +37,10 @@ width: 80%;
 }
 .mainheader{
 text-align: center;
-font-size: 5vw;
+font-size: 70px;
+}
+.mainheader_resp{
+	font-size: 5vw;
 }
 .secondheader{
   text-align: center;
@@ -45,15 +52,30 @@ font-size: 5vw;
   max-width: 680px;
   /*height: 100%;*/
   padding-top: 25%;
-  color: #000;
 }
-.containerprojects {
+.container-projects {
   width: auto;
   max-width: 680px;
   /*height: 100%;*/
   padding-top: 15%;
   color: #000;
 }
+.email{
+	text-align: center;
+	font-size: 30px;
+}
+.container-contact{
+  width: auto;
+  max-width: 680px;
+  /*height: 100%;*/
+  padding-top: 15%;
+  color: #000;
+}
+
+.linkedin{
+	text-align: center;
+}
+
 
 figure {
   display: block;
@@ -106,7 +128,8 @@ figure:before {
 figure:hover:before {
   opacity: 0;
 }
-.projectheadline{
+.low-headline{
+	color: #000;
   text-align: center;
 }
 .projimage{
