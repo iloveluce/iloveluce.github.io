@@ -71,3 +71,48 @@ function is_touch_device() {
       || (navigator.MaxTouchPoints > 0)
       || (navigator.msMaxTouchPoints > 0));
 }
+
+document.addEventListener('DOMContentLoaded', function() {
+    // Smooth scrolling for navigation links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function(e) {
+            e.preventDefault();
+            const target = document.querySelector(this.getAttribute('href'));
+            if (target) {
+                target.scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'start'
+                });
+            }
+        });
+    });
+
+    // Press accordion functionality
+    const pressHeaders = document.querySelectorAll('.press-header');
+    pressHeaders.forEach(header => {
+        header.addEventListener('click', () => {
+            const content = header.nextElementSibling;
+            const isActive = content.classList.contains('active');
+            
+            // Close all other press items
+            document.querySelectorAll('.press-content').forEach(item => {
+                item.classList.remove('active');
+            });
+            
+            // Toggle current item
+            if (!isActive) {
+                content.classList.add('active');
+            }
+        });
+    });
+
+    // Mobile navigation toggle
+    const mobileNavToggle = document.createElement('button');
+    mobileNavToggle.className = 'mobile-nav-toggle';
+    mobileNavToggle.innerHTML = '<span></span><span></span><span></span>';
+    document.querySelector('.nav-content').prepend(mobileNavToggle);
+
+    mobileNavToggle.addEventListener('click', () => {
+        document.querySelector('.nav-links').classList.toggle('active');
+    });
+});
