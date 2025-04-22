@@ -252,8 +252,10 @@ body {
 }
 
 .press-header {
+    color: var(--primary-color);
     width: 100%;
     padding: 1.5rem;
+    font-size: 1.5rem;
     background: none;
     border: none;
     text-align: left;
@@ -285,6 +287,8 @@ body {
 .press-date {
     color: var(--secondary-color);
     font-size: 0.9rem;
+    padding-left: 0.5rem;
+    max-width: 30%;
 }
 
 /* Remove press content styles */
@@ -406,7 +410,7 @@ body {
         margin-left: 0;
         padding-top: 1rem;
         scroll-margin-top: 5rem;
-        margin-top: 18vw;
+        margin-top: 20vh;
     }
 
     .section {
