@@ -340,9 +340,7 @@ body {
 /* Responsive Navigation */
 @media (max-width: 1024px) {
    
-    .content {
-        margin-left: 0px;
-    }
+
     .nav {
         width: 250px;
         padding: 1.5rem;
@@ -353,10 +351,7 @@ body {
     }
 }
 @media (max-width: 768px) {
-    .content {
-        margin-left: 0px;
-        margin-top: 200px;
-    }
+    
     .nav {
         width: 100%;
         height: auto;
@@ -411,6 +406,7 @@ body {
         margin-left: 0;
         padding-top: 1rem;
         scroll-margin-top: 5rem;
+        margin-top: 18vw;
     }
 
     .section {
